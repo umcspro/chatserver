@@ -54,7 +54,7 @@ public class Server {
     public void broadcastPrivate(String sender,String receiver, String message){
         ClientHandler reciverHandler = clientHandlers.get(receiver);
         if ( reciverHandler!=null)
-            reciverHandler.send("[ _private_ " + sender + "]: " + message);
+            reciverHandler.send("/broadcast [ _private_ " + sender + "]: " + message);
         else{
             clientHandlers.get(sender).send("/broadcast [SERVER]: User Offline");
         }
